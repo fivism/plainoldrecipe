@@ -24,7 +24,7 @@ def scrape_recipe(url):
 
     if not recipe:
         parsed_uri = urllib.parse.urlparse(url)
-        domain = parsed_uri.netloc.lower()
+        domain = parsed_uri.netloc.lower().replace('www.', '', 1)
         parser = parsers.getParser(domain)
 
         if parser is None:
