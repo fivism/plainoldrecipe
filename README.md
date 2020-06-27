@@ -3,6 +3,9 @@ plain-old HTML.
 
 You can use it here: https://www.plainoldrecipe.com/
 
+Or drag this bookmarklet link to your bookmarks toolbar to use on recipes you come across:
+[Simplify Recipe](javascript:(function(){document.location.href='http://localhost:8080/recipe?url='+escape(document.location.href);})();)
+
 Screenshots
 -----------
 
