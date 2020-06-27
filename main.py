@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, make_response, url_for, flash
 from recipe_scrapers import scrape_me, WebsiteNotImplementedError, SCRAPERS
-import urllib
+import tldextract
 import parsers
 import logging
 
@@ -23,9 +23,8 @@ def scrape_recipe(url):
         pass
 
     if not recipe:
-        parsed_uri = urllib.parse.urlparse(url)
-        domain = parsed_uri.netloc.lower()
-        domain = domain.replace('www.', '', 1) if domain.startswith('www.') else domain
+        domain = tldextract.extract(url)
+        domain = domain.fqdn if domain.subdomain != 'www' else domain.registered_domain
         parser = parsers.getParser(domain)
 
         if parser is None:
@@ -46,9 +45,8 @@ def index():
 
 @app.route('/recipe')
 def recipe():
-    url = request.args['url']
-    parsed_uri = urllib.parse.urlparse(url)
-    domain = parsed_uri.netloc.lower()
+    url = request.args['url'].lower()
+    domain = tldextract.extract(url).fqdn
 
     try:
         recipe = scrape_recipe(url)

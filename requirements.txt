@@ -2,3 +2,4 @@ flask
 recipe-scrapers
 beautifulsoup4
 requests
+tldextract
