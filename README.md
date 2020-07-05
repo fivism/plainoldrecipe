@@ -3,6 +3,20 @@ plain-old HTML.
 
 You can use it here: https://www.plainoldrecipe.com/
 
+Saver Branch
+-----------
+This runs locally and uses AutoIndex to view cached recipes saved in the `recipes` folder.
+
+Todos:
+- [ ] Format the AutoIndex to be more mobile friendly or find out if we can drop the index pathing to leave it to Apache's default indexer (maybe more [mobile friendly](https://github.com/mulhoon/doxy)?) 
+- [ ] Allow access to this mobile service from outside the home network (?) 
+- [ ] Fix the state that causes `/recipes` to fail when the directory is not created yet. (Create the folder at initial runtime perhaps) 
+- [ ] favicon
+- [ ] add https://www.onceuponachef.com/
+- [ ] use lispy case for cached recipes not snake_case
+- [ ] Favicon and apple-touch-icon the /recipes url 
+- [ ] Rebase most of this into an atomic commit
+
 Screenshots
 -----------
 

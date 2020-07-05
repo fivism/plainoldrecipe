@@ -2,3 +2,5 @@ flask
 recipe-scrapers==8.0.1
 beautifulsoup4
 requests
+tornado
+Flask-AutoIndex
