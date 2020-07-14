@@ -34,11 +34,11 @@ Deploy
 
 gcloud app deploy --account=gargoylemusic@gmail.com --project=plainoldrecipe
 
-Deploy Locally
+Deploy Locally ;)
 --------------
 
-nohup ~/repos/plainoldrecipe/server_start.py &
-;)
+nohup ~/path/to/repo/server_start.py &
+
 
 Acknowledgements
 ----------------
